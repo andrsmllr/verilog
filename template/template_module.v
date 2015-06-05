@@ -1,18 +1,26 @@
 /**
- * \file <FILE_NAME>
- * 
- * \date <YYYY-MM-DD>
- * 
- * \author <YOUR_NAME>
- * 
- * \brief ...
- * 
- * \details ...
- * 
- * \see
- */
-
-/****************************************************************************/
+ * \file      <FILE_NAME>
+ *
+ * \project   <PROJECT_NAME>
+ *
+ * \langv     Verilog-2005
+ *
+ * \brief     <BRIEF_DESCRIPTION>.
+ *
+ * \details   <DETAILED_DESCRIPTION>.
+ *
+ * \bug       <BUGS_OR_KNOWN_ISSUES>.
+ *
+ * \see       <REFERENCES>
+ *
+ * \copyright <COPYRIGHT_OR_LICENSE>
+ *
+ * Revision history:
+ *
+ * \version   <VERSION>
+ * \date      <YYYY-MM-DD>
+ * \author    <AUTHOR_NAME>
+**/
 
 module MODULE_NAME
 #(
@@ -26,8 +34,9 @@ module MODULE_NAME
     output reg[PARAM2-1:0] data_o
 );
 
-/****************************************************************************/
-
+/*
+ * Purpose of the following always block.
+**/
 always@(posedge clk_i or posedge rst_i)
 begin
     if (rst_i == 1'b1)
@@ -35,7 +44,5 @@ begin
     else
         data_o <= data_i;
 end
-
-/****************************************************************************/
 
 endmodule

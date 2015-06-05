@@ -1,22 +1,28 @@
-/****************************************************************************/
 /**
- * \file <FILE_NAME>
- * 
- * \date <YYYY-MM-DD>
- * 
- * \author <YOUR_NAME>
- * 
- * \brief ...
- * 
- * \details ...
- * 
- * \see
- */
-/****************************************************************************/
+ * \file      <FILE_NAME>
+ *
+ * \project   <PROJECT_NAME>
+ *
+ * \langv     Verilog-2005
+ *
+ * \brief     <BRIEF_DESCRIPTION>.
+ *
+ * \details   <DETAILED_DESCRIPTION>.
+ *
+ * \bug       <BUGS_OR_KNOWN_ISSUES>.
+ *
+ * \see       <REFERENCES>
+ *
+ * \copyright <COPYRIGHT_OR_LICENSE>
+ *
+ * Revision history:
+ *
+ * \version   <VERSION>
+ * \date      <YYYY-MM-DD>
+ * \author    <AUTHOR_NAME>
+**/
 
 `ifndef _TEMPLATE_H
 `define _TEMPLATE_H
-
-`define timescale 1ns
 
 `endif // _TEMPLATE_H
