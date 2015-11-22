@@ -5,11 +5,11 @@
  *
  * \langv     Verilog-2005
  *
- * \brief     <BRIEF_DESCRIPTION>.
+ * \brief     <BRIEF_DESCRIPTION>
  *
- * \details   <DETAILED_DESCRIPTION>.
+ * \details   <DETAILED_DESCRIPTION>
  *
- * \bug       <BUGS_OR_KNOWN_ISSUES>.
+ * \bug       <BUGS_OR_KNOWN_ISSUES>
  *
  * \see       <REFERENCES>
  *
@@ -20,9 +20,11 @@
  * \version   <VERSION>
  * \date      <YYYY-MM-DD>
  * \author    <AUTHOR_NAME>
+ * \brief     <BRIEF_DESCRIPTION>
 **/
 
 `ifndef _TEMPLATE_H
 `define _TEMPLATE_H
 
 `endif // _TEMPLATE_H
+
