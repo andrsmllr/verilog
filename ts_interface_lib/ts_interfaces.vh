@@ -1,17 +1,18 @@
 /**
- * \file      ts_interfaces
+ * \file      ts_interfaces.vh
  *
  * \project   ts_interfaces
  *
  * \langv     Verilog-2005
  *
- * \brief     Definition of various TS intefaces for usage in port
- *            declarations.
+ * \brief     Definition of various intefaces for MPEG-2 transport streams
+ *            (MPEG-2 TS) to be used in port declarations.
  *
  * \details   This file contains macros for a number of standardized or
- *            frequently used TS interfaces. These macros are intended to
- *            supply a uniform way to add TS interfaces to the port
- *            declaration of modules in order to improve interoperabilty.
+ *            frequently used MPEG-2 TS interfaces. These macros are intended
+ *            as a uniform way to easily add MPEG-2 TS interfaces to the port 
+ *            interface of a module or to quickly declare nets of the required
+ *            types.
  *
  * \bug       -
  *
@@ -21,78 +22,89 @@
  *
  * Revision history:
  *
+ * \version   0.2
+ * \date      2015-11-20
+ * \author    Andreas Mueller
+ * \brief     Generalize macros to allow port and net declarations alike.
+ *            This brakes backwards compatibility.
+ *
  * \version   0.1
  * \date      2015-06-05
  * \author    Andreas Mueller
+ * \brief     Create file.
 **/
 
 `ifndef _TS_INTERFACES
 `define _TS_INTERFACES
 
 /**
- * Serial TS interface.
+ * Proprietary interfaces for MPEG-2 TSs.
+**/
+
+/**
+ * Serial MPEG-2 TS interface.
+**/
+`define tsif_ser(_type, _prefix, _suffix) \
+_type _prefix``clk``_suffix,\
+_type _prefix``data``_suffix,\
+_type _prefix``sync``_suffix,\
+_type _prefix``valid``_suffix
+
+/**
+ * Parallel MPEG-2 TS interface 8 bit.
  * This port interface is identical to the synchronous parallel interface(SPI)
  * defined in EN 50083-9.
 **/
-`define tsif_ser(name, direction) \
-direction name``_clk,\
-direction name``_data,\
-direction name``_sync,\
-direction name``_valid
+`define tsif_par(_type, _prefix, _suffix) `tsif_par_8b(_type, _prefix, _suffix)
+`define tsif_par_8b(_type, _prefix, _suffix) \
+_type       _prefix``clk``_suffix,\
+_type [7:0] _prefix``data``_suffix,\
+_type       _prefix``sync``_suffix,\
+_type       _prefix``valid``_suffix
 
 /**
- * Parallel TS interface 8 bit.
+ * Parallel MPEG-2 TS interface 16 bit.
 **/
-`define tsif_par(name, direction) `tsif_par_8b(name, direction)
-`define tsif_par_8b(name, direction) \
-direction       name``_clk,\
-direction [7:0] name``_data,\
-direction       name``_sync,\
-direction       name``_valid
+`define tsif_par_16b(_type, _prefix, _suffix) \
+_type        _prefix``clk``_suffix,\
+_type [15:0] _prefix``data``_suffix,\
+_type        _prefix``sync``_suffix,\
+_type        _prefix``valid``_suffix
 
 /**
- * Parallel TS interface 16 bit.
+ * Parallel MPEG-2 TS interface 32 bit.
 **/
-`define tsif_par_16b(name, direction) \
-direction        name``_clk,\
-direction [15:0] name``_data,\
-direction        name``_sync,\
-direction        name``_valid
+`define tsif_par_32b(_type, _prefix, _suffix) \
+_type        _prefix``clk``_suffix,\
+_type [31:0] _prefix``data``_suffix,\
+_type        _prefix``sync``_suffix,\
+_type        _prefix``valid``_suffix
 
 /**
- * Parallel TS interface 32 bit.
-**/
-`define tsif_par_32b(name, direction) \
-direction        name``_clk,\
-direction [31:0] name``_data,\
-direction        name``_sync,\
-direction        name``_valid
-
-/**
- * Transport stream interfaces as standardized by EN 50083-9.
+ * MPEG-2 TS interfaces as standardized by EN 50083-9.
 **/
 
 /**
- * Synchronous Parallel Interface (SPI), EN 50083-9.
+ * Synchronous Parallel Interface (SPI), ref. EN 50083-9.
 **/
-`define tsif_spi(name, direction) \
-direction       name``_clock,\
-direction [7:0] name``_data,\
-direction       name``_dvalid,\
-direction       name``_psync
+`define tsif_spi(_type, _prefix, _suffix) \
+_type       _prefix``clock``_suffix,\
+_type [7:0] _prefix``data``_suffix,\
+_type       _prefix``dvalid``_suffix,\
+_type       _prefix``psync``_suffix
 
 /**
- * Synchronous Serial Interface (SSI), EN 50083-9.
+ * Synchronous Serial Interface (SSI), ref. EN 50083-9.
  * This port interface is trivial, but is listed for completeness.
 **/
-`define tsif_ssi(name, direction) \
-direction name``_data,\
+`define tsif_ssi(_type, _prefix, _suffix) \
+_type _prefix``data``_suffix
 
 /**
- * Asynchronous Serial Interface (ASI), EN 50083-9.
+ * Asynchronous Serial Interface (ASI), ref. EN 50083-9.
  * This port interface is trivial, but is listed for completeness.
 **/
-`define tsif_asi(name, direction) \
-direction name``_data,\
+`define tsif_asi(_type, _prefix, _suffix) \
+_type _prefix``data``_suffix
 
 `endif // _TS_INTERFACES
