@@ -17,6 +17,12 @@
  *
  * Revision history:
  *
+ * \version   0.3
+ * \date      2015-11-25
+ * \author    Andreas Mueller
+ * \brief     Adapt to changes in 'ts_interfaces.vh'.
+ *            Add helper macros for comma and semicolon characters.
+ *
  * \version   0.2
  * \date      2015-11-20
  * \author    Andreas Mueller
@@ -35,16 +41,28 @@
 
 `timescale 10ns/10ns
 
+// Delimiters used as parameters to macros below.
+`define COMMA ,
+`define SEMICOLON ;
+
 module ts_interfaces_tb
 (
-// Construct some TS interfaces of different "types".
-`tsif_ser(output, ts_ser_, _o1),
-`tsif_ser(output, , ),
-`tsif_par(output, ts_par_, _o2),
-`tsif_par_8b(output, ts_par_, _o3),
-`tsif_par_16b(output, ts_par_, _o4),
-`tsif_par_32b(output, ts_par_, _o5)
+// Declare some ports for TS interfaces of different "types".
+`TSIF_SER(output, ts_ser_, _o1, `COMMA),
+`TSIF_SER(output, , , `COMMA),
+`TSIF_PAR(output, ts_par_, _o2, `COMMA),
+`TSIF_PAR_8B(output, ts_par_, _o3, `COMMA),
+`TSIF_PAR_16B(output, ts_par_, _o4, `COMMA),
+`TSIF_PAR_32B(output, ts_par_, _o5, `COMMA)
 );
+
+// Declare some nets for TS interfaces of different "types".
+`TSIF_SER(reg, ts_ser_, _r, `SEMICOLON);
+`TSIF_SER(wire, , , `SEMICOLON);
+`TSIF_PAR(reg, ts_par_, _r, `SEMICOLON);
+`TSIF_PAR_8B(wire, ts_par_, _w, `SEMICOLON);
+`TSIF_PAR_16B(reg, ts_par_, _r, `SEMICOLON);
+`TSIF_PAR_32B(wire, ts_par_, _w, `SEMICOLON);
 
 /**
  * Initialize and run simulation.
