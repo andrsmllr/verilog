@@ -49,20 +49,20 @@ module ts_interfaces_tb
 (
 // Declare some ports for TS interfaces of different "types".
 `TSIF_SER(output, ts_ser_, _o1, `COMMA),
-`TSIF_SER(output, , , `COMMA),
-`TSIF_PAR(output, ts_par_, _o2, `COMMA),
-`TSIF_PAR_8B(output, ts_par_, _o3, `COMMA),
-`TSIF_PAR_16B(output, ts_par_, _o4, `COMMA),
-`TSIF_PAR_32B(output, ts_par_, _o5, `COMMA)
+`TSIF_SER(output, , _o2, `COMMA),
+`TSIF_PAR(output, ts_par_, _o3, `COMMA),
+`TSIF_PAR_8B(output, ts_par_, _o4, `COMMA),
+`TSIF_PAR_16B(output, ts_par_, _o5, `COMMA),
+`TSIF_PAR_32B(output, ts_par_, _o6, `COMMA)
 );
 
 // Declare some nets for TS interfaces of different "types".
-`TSIF_SER(reg, ts_ser_, _r, `SEMICOLON);
-`TSIF_SER(wire, , , `SEMICOLON);
-`TSIF_PAR(reg, ts_par_, _r, `SEMICOLON);
-`TSIF_PAR_8B(wire, ts_par_, _w, `SEMICOLON);
-`TSIF_PAR_16B(reg, ts_par_, _r, `SEMICOLON);
-`TSIF_PAR_32B(wire, ts_par_, _w, `SEMICOLON);
+`TSIF_SER(reg, ts_ser_, _r1, `SEMICOLON);
+`TSIF_SER(wire, , _w2, `SEMICOLON);
+`TSIF_PAR(reg, ts_par_, _r3, `SEMICOLON);
+`TSIF_PAR_8B(wire, ts_par_, _w4, `SEMICOLON);
+`TSIF_PAR_16B(reg, ts_par_, _r5, `SEMICOLON);
+`TSIF_PAR_32B(wire, ts_par_, _w6, `SEMICOLON);
 
 /**
  * Initialize and run simulation.
@@ -98,25 +98,25 @@ assign ts_ser_data_o1  = 1'b1;
 assign ts_ser_sync_o1  = 1'b0;
 assign ts_ser_valid_o1 = 1'b0;
 
-assign ts_par_clk_o2   = clk;
-assign ts_par_data_o2  = 8'h47;
-assign ts_par_sync_o2  = 1'b0;
-assign ts_par_valid_o2 = 1'b1;
-
 assign ts_par_clk_o3   = clk;
 assign ts_par_data_o3  = 8'h47;
 assign ts_par_sync_o3  = 1'b0;
 assign ts_par_valid_o3 = 1'b1;
 
 assign ts_par_clk_o4   = clk;
-assign ts_par_data_o4  = 16'h471F;
+assign ts_par_data_o4  = 8'h47;
 assign ts_par_sync_o4  = 1'b0;
 assign ts_par_valid_o4 = 1'b1;
 
 assign ts_par_clk_o5   = clk;
-assign ts_par_data_o5  = 32'hFEDCBA98;
+assign ts_par_data_o5  = 16'h471F;
 assign ts_par_sync_o5  = 1'b0;
 assign ts_par_valid_o5 = 1'b1;
+
+assign ts_par_clk_o6   = clk;
+assign ts_par_data_o6  = 32'hFEDCBA98;
+assign ts_par_sync_o6  = 1'b0;
+assign ts_par_valid_o6 = 1'b1;
 
 endmodule
 
