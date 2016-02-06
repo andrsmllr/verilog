@@ -1,7 +1,7 @@
 /**
  * \file      mpeg2ts_tb
  *
- * \project   mpeg2
+ * \project   mpeg2_lib
  *
  * \langv     Verilog-2005
  *
