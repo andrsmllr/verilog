@@ -27,7 +27,7 @@
  * \author    Andreas Mueller
  * \brief     Add macro parameter to allow specification of a delimiter.
  *            Switch all macros to all caps names.
- *            This brakes backwards compatibility.
+ *            This breaks backwards compatibility.
  *
  * \version   0.2
  * \date      2015-11-20
@@ -52,9 +52,9 @@
  * Serial MPEG-2 TS interface.
 **/
 `define TSIF_SER(_type, _prefix, _suffix, _delim) \
-_type _prefix``clk``_suffix``_delim\
-_type _prefix``data``_suffix``_delim\
-_type _prefix``sync``_suffix``_delim\
+_type _prefix``clk``_suffix``_delim \
+_type _prefix``data``_suffix``_delim \
+_type _prefix``sync``_suffix``_delim \
 _type _prefix``valid``_suffix
 
 /**
@@ -64,27 +64,27 @@ _type _prefix``valid``_suffix
 **/
 `define TSIF_PAR(_type, _prefix, _suffix, _delim) `TSIF_PAR_8B(_type, _prefix, _suffix, _delim)
 `define TSIF_PAR_8B(_type, _prefix, _suffix, _delim) \
-_type       _prefix``clk``_suffix``_delim\
-_type [7:0] _prefix``data``_suffix``_delim\
-_type       _prefix``sync``_suffix``_delim\
+_type       _prefix``clk``_suffix``_delim \
+_type [7:0] _prefix``data``_suffix``_delim \
+_type       _prefix``sync``_suffix``_delim \
 _type       _prefix``valid``_suffix
 
 /**
  * Parallel MPEG-2 TS interface 16 bit.
 **/
 `define TSIF_PAR_16B(_type, _prefix, _suffix, _delim) \
-_type        _prefix``clk``_suffix``_delim\
-_type [15:0] _prefix``data``_suffix``_delim\
-_type        _prefix``sync``_suffix``_delim\
+_type        _prefix``clk``_suffix``_delim \
+_type [15:0] _prefix``data``_suffix``_delim \
+_type        _prefix``sync``_suffix``_delim \
 _type        _prefix``valid``_suffix
 
 /**
  * Parallel MPEG-2 TS interface 32 bit.
 **/
 `define TSIF_PAR_32B(_type, _prefix, _suffix, _delim) \
-_type        _prefix``clk``_suffix``_delim\
-_type [31:0] _prefix``data``_suffix``_delim\
-_type        _prefix``sync``_suffix``_delim\
+_type        _prefix``clk``_suffix``_delim \
+_type [31:0] _prefix``data``_suffix``_delim \
+_type        _prefix``sync``_suffix``_delim \
 _type        _prefix``valid``_suffix
 
 /**
@@ -95,9 +95,9 @@ _type        _prefix``valid``_suffix
  * Synchronous Parallel Interface (SPI), ref. EN 50083-9.
 **/
 `define TSIF_SPI(_type, _prefix, _suffix, _delim) \
-_type       _prefix``clock``_suffix``_delim\
-_type [7:0] _prefix``data``_suffix``_delim\
-_type       _prefix``dvalid``_suffix``_delim\
+_type       _prefix``clock``_suffix``_delim \
+_type [7:0] _prefix``data``_suffix``_delim \
+_type       _prefix``dvalid``_suffix``_delim \
 _type       _prefix``psync``_suffix
 
 /**
