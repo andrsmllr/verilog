@@ -10,7 +10,7 @@
  *
  * \details   Every Verilog module should contain the definition of the
  *            timescale directive, either by defining it or by including an
- *            apropriate header file like this one.
+ *            appropriate header file like this one.
  *
  * \bug       -
  *
@@ -26,6 +26,6 @@
  */
 /****************************************************************************/
 
-`ifndef timescale
-`define timescale 1 ns / 1 ps
-`endif
+`ifndef _H_TIMESCALE
+`timescale 10 ns / 1 ns
+`endif // _H_TIMESCALE
