@@ -5,7 +5,7 @@
  *
  * \langv     Verilog-2005
  *
- * \brief     Testbench for randomizer to perform energy dispersal.
+ * \brief     Testbench for dvbc_randomizer.
  *
  * \details   -
  *
@@ -20,16 +20,13 @@
  * \version   0.1
  * \date      2015-06-05
  * \author    Andreas Mueller
+ * \brief     Create file.
 **/
 
 module dvbc_randomizer_tb
 #(
-    parameter PARAM1 = 0,
-    parameter PARAM2 = 8
 )
 (
 );
 
-
 endmodule
-

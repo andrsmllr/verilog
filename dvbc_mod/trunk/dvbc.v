@@ -1,48 +1,61 @@
 /**
- * \file      <FILE_NAME>
+ * \file      dvbc
  *
- * \project   <PROJECT_NAME>
+ * \project   dvbc
  *
  * \langv     Verilog-2005
  *
- * \brief     <BRIEF_DESCRIPTION>.
+ * \brief     DVB-C modulator.
  *
- * \details   <DETAILED_DESCRIPTION>.
+ * \details   -
  *
- * \bug       <BUGS_OR_KNOWN_ISSUES>.
+ * \bug       -
  *
- * \see       <REFERENCES>
+ * \see       -
  *
- * \copyright <COPYRIGHT_OR_LICENSE>
+ * \copyright GPLv2
  *
  * Revision history:
  *
- * \version   <VERSION>
- * \date      <YYYY-MM-DD>
- * \author    <AUTHOR_NAME>
+ * \version   0.1
+ * \date      2015-06-05
+ * \author    Andreas Mueller
+ * \brief     Create file.
 **/
 
-module MODULE_NAME
+module dvbc
 #(
-    parameter PARAM1 = 0,
-    parameter PARAM2 = 8
+    parameter BB_SYMBOL_WIDTH = 8,
+    parameter SIMULATION = 0,
+    parameter DEBUG = 0
 )
 (
-    input wire clk_i,
-    input wire rst_i,
-    input wire[PARAM2-1:0] data_i,
-    output reg[PARAM2-1:0] data_o
+    // System interface.
+    input wire       clk_sys_i,
+    input wire       rst_sys_i,
+    output reg       irq_o,
+    output reg [7:0] status_o,
+    input wire [7:0] ctrl_i,
+    
+    // MPEG2-TS data interface.
+    input wire       tsp_clock,
+    input wire [7:0] tsp_data,
+    input wire       tsp_sync,
+    input wire       tsp_valid,
+    output reg       tsp_ack, // Interface extension.
+    
+    // Baseband (BB) data interface.
+    input wire                       clk_bb_i,
+    output reg [BB_SYMBOL_WIDTH-1:0] bb_symbol_i,
+    output reg [BB_SYMBOL_WIDTH-1:0] bb_symbol_q
 );
 
 /*
  * Purpose of the following always block.
 **/
-always@(posedge clk_i or posedge rst_i)
+always @ (posedge clk_i, posedge rst_i)
 begin
-    if (rst_i == 1'b1)
-        data_o <= 'b0;
-    else
-        data_o <= data_i;
+    ;
 end
 
 endmodule

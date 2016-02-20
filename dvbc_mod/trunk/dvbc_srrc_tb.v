@@ -21,16 +21,13 @@
  * \version   0.1
  * \date      2015-06-05
  * \author    Andreas Mueller
+ * \brief     Create file.
 **/
 
 module dvbc_srrc_tb
 #(
-    parameter PARAM1 = 0,
-    parameter PARAM2 = 8
 )
 (
 );
 
-
 endmodule
-

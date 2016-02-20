@@ -1,35 +1,32 @@
 /**
- * \file      <FILE_NAME>
+ * \file      dvbc_tb
  *
- * \project   <PROJECT_NAME>
+ * \project   dvbc
  *
  * \langv     Verilog-2005
  *
- * \brief     <BRIEF_DESCRIPTION>.
+ * \brief     Testbench for DVB-C modulator.
  *
- * \details   <DETAILED_DESCRIPTION>.
+ * \details   -
  *
- * \bug       <BUGS_OR_KNOWN_ISSUES>.
+ * \bug       -
  *
- * \see       <REFERENCES>
+ * \see       -
  *
- * \copyright <COPYRIGHT_OR_LICENSE>
+ * \copyright GPLv2
  *
  * Revision history:
  *
- * \version   <VERSION>
- * \date      <YYYY-MM-DD>
- * \author    <AUTHOR_NAME>
+ * \version   0.1
+ * \date      2015-06-05
+ * \author    Andreas Mueller
+ * \brief     Create file.
 **/
 
-module TESTBENCH_NAME
+module dvbc_tb
 #(
-    parameter PARAM1 = 0,
-    parameter PARAM2 = 8
 )
 (
 );
 
-
 endmodule
-
