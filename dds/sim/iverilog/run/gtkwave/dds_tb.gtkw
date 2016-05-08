@@ -1,0 +1,62 @@
+[*]
+[*] GTKWave Analyzer v3.3.66 (w)1999-2015 BSI
+[*] Fri Mar 25 19:42:45 2016
+[*]
+[dumpfile] "/home/andreas/git/verilog/dds/sim/iverilog/out/dds_tb.vcd"
+[dumpfile_mtime] "Fri Mar 25 19:41:31 2016"
+[dumpfile_size] 3705716
+[savefile] "/home/andreas/git/verilog/dds/sim/iverilog/run/gtkwave/dds_tb.gtkw"
+[timestart] 0
+[size] 1363 867
+[pos] -1 -1
+*-26.364977 100600000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] dds_tb.
+[sst_width] 237
+[signals_width] 245
+[sst_expanded] 1
+[sst_vpaned_height] 249
+@28
+[color] 1
+dds_tb.clk
+[color] 1
+dds_tb.rst
+@23
+[color] 3
+dds_tb.bb_data[7:0]
+@24
+[color] 5
+dds_tb.phase_inc[15:0]
+@28
+[color] 5
+dds_tb.phase_inc_ena
+@24
+dds_tb.if_data[16:0]
+@c08420
+dds_tb.if_data[16:0]
+@28
+(0)dds_tb.if_data[16:0]
+(1)dds_tb.if_data[16:0]
+(2)dds_tb.if_data[16:0]
+(3)dds_tb.if_data[16:0]
+(4)dds_tb.if_data[16:0]
+(5)dds_tb.if_data[16:0]
+(6)dds_tb.if_data[16:0]
+(7)dds_tb.if_data[16:0]
+(8)dds_tb.if_data[16:0]
+(9)dds_tb.if_data[16:0]
+(10)dds_tb.if_data[16:0]
+(11)dds_tb.if_data[16:0]
+(12)dds_tb.if_data[16:0]
+(13)dds_tb.if_data[16:0]
+(14)dds_tb.if_data[16:0]
+(15)dds_tb.if_data[16:0]
+(16)dds_tb.if_data[16:0]
+@1401200
+-group_end
+@20000
+-
+-
+-
+-
+[pattern_trace] 1
+[pattern_trace] 0

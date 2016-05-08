@@ -1,0 +1,31 @@
+[*]
+[*] GTKWave Analyzer v3.3.66 (w)1999-2015 BSI
+[*] Fri Mar 25 19:41:15 2016
+[*]
+[dumpfile] "/home/andreas/git/verilog/dds/sim/iverilog/out/dds_sin_rom_tb.vcd"
+[dumpfile_mtime] "Fri Mar 25 19:40:49 2016"
+[dumpfile_size] 67225
+[savefile] "/home/andreas/git/verilog/dds/sim/iverilog/run/gtkwave/dds_sin_rom_tb.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] 135 0
+*-8.509235 349 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 217
+[signals_width] 186
+[sst_expanded] 1
+[sst_vpaned_height] 151
+@25
+[color] 3
+dds_sin_rom_tb.i
+@24
+[color] 5
+dds_sin_rom_tb.phase[11:0]
+dds_sin_rom_tb.sinus[7:0]
+@8420
+dds_sin_rom_tb.sinus[7:0]
+@20000
+-
+-
+-
+[pattern_trace] 1
+[pattern_trace] 0

@@ -1,0 +1,43 @@
+[*]
+[*] GTKWave Analyzer v3.3.66 (w)1999-2015 BSI
+[*] Fri Mar 25 19:40:18 2016
+[*]
+[dumpfile] "/home/andreas/git/verilog/dds/sim/iverilog/out/dds_phase_acc_tb.vcd"
+[dumpfile_mtime] "Fri Mar 25 19:38:06 2016"
+[dumpfile_size] 17578
+[savefile] "/home/andreas/git/verilog/dds/sim/iverilog/run/gtkwave/dds_phase_acc_tb.gtkw"
+[timestart] 0
+[size] 1000 600
+[pos] -1 -1
+*-7.853751 595 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[sst_width] 217
+[signals_width] 206
+[sst_expanded] 1
+[sst_vpaned_height] 151
+@28
+[color] 1
+dds_phase_acc_tb.clk
+[color] 1
+dds_phase_acc_tb.rst
+[color] 3
+dds_phase_acc_tb.phase_load_ena
+@25
+[color] 3
+dds_phase_acc_tb.phase_load[15:0]
+@28
+[color] 5
+dds_phase_acc_tb.phase_inc_ena
+@24
+[color] 5
+dds_phase_acc_tb.phase_inc[15:0]
+dds_phase_acc_tb.phase_acc[15:0]
+@8024
+dds_phase_acc_tb.phase_acc[15:0]
+@20000
+-
+-
+-
+@28
+dds_phase_acc_tb.phase_acc_carry
+[pattern_trace] 1
+[pattern_trace] 0
