@@ -1,0 +1,37 @@
+[*]
+[*] GTKWave Analyzer v3.3.66 (w)1999-2015 BSI
+[*] Sun Mar 13 12:42:10 2016
+[*]
+[dumpfile] "/home/andreas/git/verilog/gen_lut_rom/gen_lut_rom_sim.vcd"
+[dumpfile_mtime] "Sun Mar 13 12:40:28 2016"
+[dumpfile_size] 54013
+[savefile] "/home/andreas/git/verilog/gen_lut_rom/gen_lut_rom_tb.gtkw"
+[timestart] 0
+[size] 1680 996
+[pos] -677 -1
+*-7.343768 283 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] gen_lut_rom_tb.
+[sst_width] 217
+[signals_width] 154
+[sst_expanded] 1
+[sst_vpaned_height] 289
+@22
+gen_lut_rom_tb.i
+@24
+[color] 5
+gen_lut_rom_tb.addr[9:0]
+@22
+gen_lut_rom_tb.data[7:0]
+@8421
+[color] 1
+gen_lut_rom_tb.data[7:0]
+@20001
+-
+-
+-
+-
+-
+-
+-
+[pattern_trace] 1
+[pattern_trace] 0
