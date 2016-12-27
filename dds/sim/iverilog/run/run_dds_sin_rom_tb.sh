@@ -34,7 +34,7 @@ TEST_SRC_FILES=`find "${TEST_SRC_DIR}" -name *.[vV] -o -name *.[vV][hH]`
 
 iverilog \
   -g2005 \
-  -Pdds_sin_rom_tb.ROM_INIT_FILE=\""${RTL_DIR}/dds_sin_rom.mem"\" \
+  -pdds_sin_rom_tb.ROM_INIT_FILE=\""${RTL_DIR}/dds_sin_rom.mem"\" \
   -o "${SIM_OUT_DIR}/${TEST_BENCH_NAME}.o" \
   "${RTL_FILES}" "${TEST_BENCH_FILE}"
 

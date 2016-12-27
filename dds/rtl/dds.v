@@ -83,14 +83,14 @@ i_phase_acc (
     .phase_acc_carry_o(phase_acc_carry)
 );
 
-assign phase_load = 'b0;   
+assign phase_load = 'b0;
 assign phase_load_ena = 1'b0;
-   
+
 always @ (posedge clk_i)
   begin
      phase_acc_reg <= $signed(phase_acc);
   end
-   
+
 /**
  * Sin lookup.
 **/
@@ -103,7 +103,7 @@ i_sin_rom (
     .phase_i(phase_acc_reg[PHASE_ACC_WIDTH-1:PHASE_ACC_WIDTH-12]),
     .sin_o(sin)
  );
-   
+
 /**
  * Up-conversion.
 **/
@@ -116,11 +116,11 @@ always @ (posedge clk_i, posedge rst_i)
 	if_data <= $signed({1'b0, bb_data_i}) * $signed(sin_reg);
      end
   end
-   
-   
+
+
 /**
  * DDS control.
-**/   
+**/
 always @ (posedge clk_i, posedge rst_i)
   begin
      if (rst_i == 1'b1) begin

@@ -37,9 +37,9 @@ module dds_tb;
 
    reg clk = 1'b0;
    reg rst;
-   reg [BB_DATA_WIDTH-1:0] bb_data;
+   reg [BB_DATA_WIDTH-1:0]   bb_data;
    reg [PHASE_INC_WIDTH-1:0] phase_inc;
-   reg 			     phase_inc_ena;
+   reg                       phase_inc_ena;
    wire signed [BB_DATA_WIDTH+SIN_ROM_WIDTH+1-1:0] if_data;
 
 /**
@@ -47,7 +47,7 @@ module dds_tb;
 **/
 integer i;
 integer seed;
-   
+
 initial
   begin
      $display("# Simulation started. #");
@@ -63,20 +63,20 @@ initial
      seed <= 1337;
      for (i = 0; i < 80; i = i + 1)
        begin
-	  bb_data <= 127 * ($sin(2.0 * 3.14 * i / 40.0) + 1);
-	  #200;
+          bb_data <= 127 * ($sin(2.0 * 3.14 * i / 40.0) + 1);
+          #200;
        end
      for (i = 0; i < 20; i = i + 1)
        begin
-	  bb_data <= $random(seed) % 256;
-	  #500;
+          bb_data <= $random(seed) % 256;
+          #500;
        end
      #10;
      phase_inc <= 'h8000;
      for (i = 0; i < 20; i = i + 1)
        begin
-	  bb_data <= $random(seed) % 256;
-	  #500;
+          bb_data <= $random(seed) % 256;
+          #500;
        end
      #10;
      $display("# Simulation finished. #");
