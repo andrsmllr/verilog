@@ -25,18 +25,18 @@
 
 module dds_phase_acc_tb;
 
-   localparam PHASE_INC_WIDTH = 16;
-   localparam PHASE_ACC_WIDTH = 16;
-   localparam PHASE_INITIAL = 0;
+localparam PHASE_INC_WIDTH = 16;
+localparam PHASE_ACC_WIDTH = 16;
+localparam PHASE_INITIAL = 0;
 
-   reg                        clk = 1'b0;
-   reg                        rst = 1'b1;
-   reg  [PHASE_INC_WIDTH-1:0] phase_inc;
-   reg                        phase_inc_ena;
-   reg  [PHASE_ACC_WIDTH-1:0] phase_load;
-   reg                        phase_load_ena;
-   wire [PHASE_ACC_WIDTH-1:0] phase_acc;
-   wire                       phase_acc_carry;
+reg                        clk = 1'b0;
+reg                        rst = 1'b1;
+reg  [PHASE_INC_WIDTH-1:0] phase_inc;
+reg                        phase_inc_ena;
+reg  [PHASE_ACC_WIDTH-1:0] phase_load;
+reg                        phase_load_ena;
+wire [PHASE_ACC_WIDTH-1:0] phase_acc;
+wire                       phase_acc_carry;
 
 /**
  * Run simulation.
@@ -105,3 +105,4 @@ i_dut_dds_phase_acc (
 );
 
 endmodule
+

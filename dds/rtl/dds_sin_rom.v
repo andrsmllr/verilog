@@ -5,7 +5,7 @@
  *
  * \langv     Verilog-2005
  *
- * \brief     A ROM for sine lookup.
+ * \brief     A ROM for sin lookup.
  *
  * \details   -
  *
@@ -47,3 +47,4 @@ end
 assign sin_o = rom[phase_i];
 
 endmodule
+

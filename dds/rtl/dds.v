@@ -34,11 +34,11 @@ module dds
     parameter SIN_ROM_INIT_FILE = "dds_sin_rom.mem"
 )
 (
-    input  wire                                  clk_i,
-    input  wire                                  rst_i,
-    input  wire [BB_DATA_WIDTH-1:0]              bb_data_i,
-    input  wire [PHASE_INC_WIDTH-1:0]            phase_inc_i,
-    input  wire                                  phase_inc_ena_i,
+    input  wire                       clk_i,
+    input  wire                       rst_i,
+    input  wire [BB_DATA_WIDTH-1:0]   bb_data_i,
+    input  wire [PHASE_INC_WIDTH-1:0] phase_inc_i,
+    input  wire                       phase_inc_ena_i,
     output reg signed [BB_DATA_WIDTH+SIN_ROM_WIDTH+1-1:0] if_data_o
 );
 
@@ -46,24 +46,23 @@ module dds
  * Declaration region.
 **/
 
-   wire [PHASE_INC_WIDTH-1:0] phase_inc;
-   wire 		      phase_inc_ena;
-   wire [PHASE_INC_WIDTH-1:0] phase_load;
-   wire 		      phase_load_ena;
-   wire [PHASE_ACC_WIDTH-1:0] phase_acc;
-   reg  [PHASE_ACC_WIDTH-1:0] phase_acc_reg;
-   wire 		      phase_acc_carry;
+wire [PHASE_INC_WIDTH-1:0] phase_inc;
+wire                       phase_inc_ena;
+wire [PHASE_INC_WIDTH-1:0] phase_load;
+wire                       phase_load_ena;
+wire [PHASE_ACC_WIDTH-1:0] phase_acc;
+reg  [PHASE_ACC_WIDTH-1:0] phase_acc_reg;
+wire                       phase_acc_carry;
 
-   wire [SIN_ROM_WIDTH-1:0]   sin;
-   reg [SIN_ROM_WIDTH-1:0]    sin_reg;
+wire [SIN_ROM_WIDTH-1:0]   sin;
+reg  [SIN_ROM_WIDTH-1:0]   sin_reg;
 
-   reg signed [BB_DATA_WIDTH+SIN_ROM_WIDTH+1-1:0] if_data;
-   
-   
+reg signed [BB_DATA_WIDTH+SIN_ROM_WIDTH+1-1:0] if_data;
+
 /*****************************************************************************
  * Implementation region.
 **/
-  
+
 /**
  * Phase accumulator.
 **/
@@ -87,9 +86,9 @@ assign phase_load = 'b0;
 assign phase_load_ena = 1'b0;
 
 always @ (posedge clk_i)
-  begin
-     phase_acc_reg <= $signed(phase_acc);
-  end
+begin
+    phase_acc_reg <= $signed(phase_acc);
+end
 
 /**
  * Sin lookup.
@@ -107,27 +106,28 @@ i_sin_rom (
 /**
  * Up-conversion.
 **/
-always @ (posedge clk_i, posedge rst_i)
-  begin
-     if (rst_i == 1'b1) begin
-	sin_reg <= 'b0;
-     end else begin
-	sin_reg <= sin;
-	if_data <= $signed({1'b0, bb_data_i}) * $signed(sin_reg);
-     end
-  end
+always @ (posedge clk_i)
+begin
+    if (rst_i == 1'b1) begin
+        sin_reg <= 'b0;
+    end else begin
+        sin_reg <= sin;
+        if_data <= $signed({1'b0, bb_data_i}) * $signed(sin_reg);
+    end
+end
 
 
 /**
  * DDS control.
 **/
-always @ (posedge clk_i, posedge rst_i)
-  begin
-     if (rst_i == 1'b1) begin
-	if_data_o <= 'b0;
-     end else begin
-	if_data_o <= if_data;
-     end
-  end
+always @ (posedge clk_i)
+begin
+    if (rst_i == 1'b1) begin
+        if_data_o <= 'b0;
+    end else begin
+        if_data_o <= if_data;
+    end
+end
 
 endmodule
+

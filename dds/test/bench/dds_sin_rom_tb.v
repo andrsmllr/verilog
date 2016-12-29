@@ -28,17 +28,17 @@ module dds_sin_rom_tb;
 /**
  * DUT parameters.
 **/
-   parameter PHASE_WIDTH = 12;
-   parameter ROM_WIDTH = 8;
-   parameter ROM_INIT_FILE = "dds_sin_rom.mem";
+parameter PHASE_WIDTH = 12;
+parameter ROM_WIDTH = 8;
+parameter ROM_INIT_FILE = "dds_sin_rom.mem";
 
 /**
  * DUT signals.
 **/
-   reg [PHASE_WIDTH-1:0] phase;
-   wire [ROM_WIDTH-1:0]  sinus;
-   
-   
+reg [PHASE_WIDTH-1:0] phase;
+wire [ROM_WIDTH-1:0]  sinus;
+
+
 /**
  * Run simulation.
 **/
@@ -50,7 +50,7 @@ begin
     phase <= 'b0;
     #1;
     for (i = 0; i < 1000; i = i+1) begin
-	phase <= phase + 10;
+        phase <= phase + 10;
         #1;
     end
     $display("# Simulation finished. #");
@@ -64,7 +64,7 @@ initial
 begin
     $dumpfile("dds_sin_rom_tb.vcd");
     $dumpvars(2);
-end   
+end
 
 /**
  * DUT.
@@ -80,3 +80,4 @@ i_dut_sin_rom (
 );
 
 endmodule
+
